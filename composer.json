@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "": "vendor\\isys\\php-classes\\src"
+            "isys\\": "vendor\\isys\\php-classes\\src"
         }
     }
 }
