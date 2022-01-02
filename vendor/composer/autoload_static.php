@@ -28,6 +28,13 @@ class ComposerStaticInitcfa5c83c5599e5ed1e546fb115cd7f73
                 0 => __DIR__ . '/..' . '/slim/slim',
             ),
         ),
+        'R' => 
+        array (
+            'Rain' => 
+            array (
+                0 => __DIR__ . '/..' . '/rain/raintpl/library',
+            ),
+        ),
     );
 
     public static $classMap = array (
@@ -38,11 +45,6 @@ class ComposerStaticInitcfa5c83c5599e5ed1e546fb115cd7f73
         'PHPMailerOAuthGoogle' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmaileroauthgoogle.php',
         'POP3' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.pop3.php',
         'SMTP' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.smtp.php',
-        'Smarty' => __DIR__ . '/..' . '/smarty/smarty/libs/Smarty.class.php',
-        'SmartyBC' => __DIR__ . '/..' . '/smarty/smarty/libs/SmartyBC.class.php',
-        'SmartyCompilerException' => __DIR__ . '/..' . '/smarty/smarty/libs/Smarty.class.php',
-        'SmartyException' => __DIR__ . '/..' . '/smarty/smarty/libs/Smarty.class.php',
-        'Smarty_Security' => __DIR__ . '/..' . '/smarty/smarty/libs/sysplugins/smarty_security.php',
         'ntlm_sasl_client_class' => __DIR__ . '/..' . '/phpmailer/phpmailer/extras/ntlm_sasl_client.php',
         'phpmailerException' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmailer.php',
     );

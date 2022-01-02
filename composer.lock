@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a01859aa40c36df8feff32bb5822cd61",
+    "content-hash": "0f9a8f08c7dbe81f93d42d23c7fcab71",
     "packages": [
         {
             "name": "phpmailer/phpmailer",
@@ -71,6 +71,41 @@
             "time": "2017-01-09T09:33:47+00:00"
         },
         {
+            "name": "rain/raintpl",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rainphp/raintpl3.git",
+                "reference": "5bfdf4602b8adb0e80b222fa29ac559aa9c06abf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rainphp/raintpl3/zipball/5bfdf4602b8adb0e80b222fa29ac559aa9c06abf",
+                "reference": "5bfdf4602b8adb0e80b222fa29ac559aa9c06abf",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Rain": "library/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Federico Ulfo",
+                    "email": "rainelemental@gmail.com",
+                    "homepage": "http://github.com/rainphp"
+                }
+            ],
+            "description": "easy and fast template engine",
+            "support": {
+                "issues": "https://github.com/rainphp/raintpl3/issues",
+                "source": "https://github.com/rainphp/raintpl3/tree/3.0.0"
+            },
+            "time": "2012-12-24T05:24:32+00:00"
+        },
+        {
             "name": "slim/slim",
             "version": "2.0.0",
             "source": {
@@ -116,67 +151,6 @@
                 "source": "https://github.com/slimphp/Slim/tree/2.0.0"
             },
             "time": "2012-09-09T14:54:09+00:00"
-        },
-        {
-            "name": "smarty/smarty",
-            "version": "v3.1.11",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "0b24c4520b45706e4c62235655c952c32983fe5e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/0b24c4520b45706e4c62235655c952c32983fe5e",
-                "reference": "0b24c4520b45706e4c62235655c952c32983fe5e",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.1.x-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "libs/Smarty.class.php",
-                    "libs/SmartyBC.class.php",
-                    "libs/sysplugins/smarty_security.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Monte Ohrt",
-                    "email": "monte@ohrt.com"
-                },
-                {
-                    "name": "Uwe Tews",
-                    "email": "uwe.tews@googlemail.com"
-                },
-                {
-                    "name": "Rodney Rehm",
-                    "email": "rodney.rehm@medialize.de"
-                }
-            ],
-            "description": "Smarty - the compiling PHP template engine",
-            "homepage": "http://www.smarty.net",
-            "keywords": [
-                "templating"
-            ],
-            "support": {
-                "forum": "http://www.smarty.net/forums/",
-                "irc": "irc://irc.freenode.org/smarty",
-                "issues": "http://code.google.com/p/smarty-php/issues/list",
-                "source": "https://github.com/smarty-php/smarty/tree/v3.1.11"
-            },
-            "time": "2014-10-31T00:35:16+00:00"
         }
     ],
     "packages-dev": [],

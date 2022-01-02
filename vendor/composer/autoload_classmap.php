@@ -13,11 +13,6 @@ return array(
     'PHPMailerOAuthGoogle' => $vendorDir . '/phpmailer/phpmailer/class.phpmaileroauthgoogle.php',
     'POP3' => $vendorDir . '/phpmailer/phpmailer/class.pop3.php',
     'SMTP' => $vendorDir . '/phpmailer/phpmailer/class.smtp.php',
-    'Smarty' => $vendorDir . '/smarty/smarty/libs/Smarty.class.php',
-    'SmartyBC' => $vendorDir . '/smarty/smarty/libs/SmartyBC.class.php',
-    'SmartyCompilerException' => $vendorDir . '/smarty/smarty/libs/Smarty.class.php',
-    'SmartyException' => $vendorDir . '/smarty/smarty/libs/Smarty.class.php',
-    'Smarty_Security' => $vendorDir . '/smarty/smarty/libs/sysplugins/smarty_security.php',
     'ntlm_sasl_client_class' => $vendorDir . '/phpmailer/phpmailer/extras/ntlm_sasl_client.php',
     'phpmailerException' => $vendorDir . '/phpmailer/phpmailer/class.phpmailer.php',
 );
