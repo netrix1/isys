@@ -1,0 +1,19 @@
+{
+    "name": "netrix1/isys",
+    "authors": [
+        {
+            "name": "Everson L. Santana",
+            "email": "urso.net@gmail.com"
+        }
+    ],
+    "require": {
+    	"phpmailer/phpmailer":"5.2.22",
+    	"slim/slim":"2.0",
+    	"smarty/smarty":"3.1.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "vendor\\isys\\php-classes\\src"
+        }
+    }
+}
