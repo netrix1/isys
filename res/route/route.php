@@ -45,7 +45,7 @@ $app->notFound(function () use ($app) {
 //    $app->render('404.html');
     User::verifyLogin();
     $page = new PageAdmin();
-    $page->setTpl("500",User::userTemplateData());
+    $page->setTpl("404",User::userTemplateData());
 });
 
 $app->error(function (\Exception $e) use ($app) {
