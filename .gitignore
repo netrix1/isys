@@ -1,2 +1,2 @@
 composer.phar
-/views_cache/*
+/views_cache/*.php
