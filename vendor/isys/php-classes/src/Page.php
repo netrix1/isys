@@ -11,6 +11,7 @@ class Page {
     private $defaults = array(
         "header"=>true,
         "footer"=>true,
+        "fatal_error"=>"",
         "data"=>array()
     );
     public function __construct($opts=array(),$tpl_dir="/views/"){
@@ -29,11 +30,12 @@ class Page {
             $this->tpl->assign("user", $_SESSION[User::SESSION]);
         }
 
-        // insert admin menu data
-        $menu = new MenuAdmin();
-        $fmenu = $menu->makeMenu($menu->getMenu());
-        $this->tpl->assign("menu", $fmenu);
+        $this->tpl->assign("menu", ISYS_FMENU);
         $this->tpl->assign("const", get_defined_constants(true)['user']);
+
+        if ($this->options["fatal_error"]!=""){
+            $this->tpl->assign("fatal_error",$this->options["fatal_error"]);
+        }
 
         $this->setData($this->options["data"]);
 
