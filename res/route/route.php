@@ -52,8 +52,8 @@ foreach (array_reverse(ISYS_MENU_ITENS) as $m_key => $m_value){
             User::verifyLogin();
 
             // verifica se arquivo está na pasta
-            if (file_exists($_SERVER['DOCUMENT_ROOT']."/vendor/isys/php-classes/src/Controller/".$m_value['des_file_name'].".php")){
-                include_once($_SERVER['DOCUMENT_ROOT']."/vendor/isys/php-classes/src/Controller/".$m_value['des_file_name'].".php");
+            if (file_exists($_SERVER['DOCUMENT_ROOT']."/vendor/isys/Controller/".$m_value['des_file_name'].".php")){
+                include_once($_SERVER['DOCUMENT_ROOT']."/vendor/isys/Controller/".$m_value['des_file_name'].".php");
             }
 
             // verifica se arquivo está na pasta
