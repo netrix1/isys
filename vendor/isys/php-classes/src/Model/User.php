@@ -68,4 +68,10 @@ class User extends Model{
     public static function logout(){
         $_SESSION[User::SESSION] = NULL;
     }
+
+    public static function listAllUsers(){
+        $sql = new Sql();
+        $query = "SELECT *,ur.des_role_name FROM tb_users u left join tb_users_role ur ON u.des_user_role = ur.id_user_role ORDER BY u.des_user_name";
+        return $sql->select($query);
+    }
 }

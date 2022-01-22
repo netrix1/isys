@@ -2,26 +2,30 @@
 
 namespace isys;
 
+use http\Params;
 use Rain\Tpl;
 use isys\Model\User;
 
 class Page {
+
     private $tpl;
-    private $options;
-    private $defaults = array(
+    private $options = [];
+    private $defaults = [
         "header"=>true,
         "footer"=>true,
-        "fatal_error"=>"",
-        "data"=>array()
-    );
-    public function __construct($opts=array(),$tpl_dir="/views/"){
-        $this->options = array_merge($this->defaults,$opts);
+        "data"=>[],
+        "fatal_error"=>""
+    ];
+
+    public function __construct($opts = array(), $tpl_dir = "/views/"){
+        $this->options = array_merge($this->defaults, $opts);
         $config = array(
             "tpl_dir"       => $_SERVER['DOCUMENT_ROOT'].$tpl_dir,
             "cache_dir"     => $_SERVER['DOCUMENT_ROOT']."/views_cache/",
             "auto_escape"   => false,
             "debug"         => false // set to false to improve the speed
         );
+
         Tpl::configure( $config );
         $this->tpl = new Tpl();
 
@@ -43,8 +47,11 @@ class Page {
     }
 
     private function setData($data=array()){
-        foreach ($data as $k => $v){
-            $this->tpl->assign($k,$v);
+
+        foreach ($data as $k => $v) {
+
+            $this->tpl->assign($k, $v);
+
         }
     }
 

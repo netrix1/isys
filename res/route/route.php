@@ -48,7 +48,13 @@ foreach (array_reverse(ISYS_MENU_ITENS) as $m_key => $m_value){
 
         $app->get($m_value['des_href'], function() use ($m_value) {
 
+            // Check logged user
             User::verifyLogin();
+
+            // verifica se arquivo está na pasta
+            if (file_exists($_SERVER['DOCUMENT_ROOT']."/vendor/isys/php-classes/src/Controller/".$m_value['des_file_name'].".php")){
+                include_once($_SERVER['DOCUMENT_ROOT']."/vendor/isys/php-classes/src/Controller/".$m_value['des_file_name'].".php");
+            }
 
             // verifica se arquivo está na pasta
             if (file_exists($_SERVER['DOCUMENT_ROOT']."/views_admin/".$m_value['des_file_name'].".html")){
@@ -60,9 +66,23 @@ foreach (array_reverse(ISYS_MENU_ITENS) as $m_key => $m_value){
                 ));
             }
 
+            $user_template_data = User::userTemplateData();
 
-            $page->setTpl($m_value['des_file_name'],User::userTemplateData());
-            exit();
+            //personalized params ($controller_data)
+            if (isset($controller_data)) {
+                if ($user_template_data !== NULL) {
+                    $final_data = array_merge($user_template_data, $controller_data);
+                } else {
+                    $final_data = $controller_data;
+                }
+            }else{
+                $final_data = $user_template_data;
+            }
+
+            $page->setTpl(
+                $m_value['des_file_name'],
+                $final_data
+            );
         });
         if ($m_value['des_have_post']=='1'){
             // $app->post rules
@@ -82,11 +102,9 @@ $app->error(function (\Exception $e) use ($app) {
     User::verifyLogin();
 
     $page = new PageAdmin(array(
-//        "fatal_error"=>"<h2>FATAL ERROR:<small>".$e->getMessage()."</small></h2>"
         "fatal_error"=>$e->getMessage()
     ));
-//    $page = new PageAdmin();
-    $page->setTpl("500",User::userTemplateData());
+    $page->setTpl("500");
 });
 
 
