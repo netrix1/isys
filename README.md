@@ -1,5 +1,7 @@
 # Projeto iSys
 
-### Ainda vou adicionar mais informações posteriormente =D
+#### Projeto pessoal de sistema para igrejas em php7 usando rainTPL e SlimFramework, e no Front-end usando jquery. 
 
-o que posso passar é que será um sistema full php para gestão de igrejas
+## Ainda vou adicionar mais informações posteriormente =D
+
+Qualquer ajuda é mais que bem vinda =) ♥ 
