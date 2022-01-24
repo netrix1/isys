@@ -16,6 +16,7 @@ class Page {
         "data"=>[],
         "fatal_error"=>""
     ];
+    private $page_name = "";
 
     public function __construct($opts = array(), $tpl_dir = "/views/"){
         $this->options = array_merge($this->defaults, $opts);
@@ -64,12 +65,19 @@ class Page {
     }
 
     public function setTpl($name, $data = array(), $returnHTML = false){
+        $this->page_name = $name;
         $this->setData($data);
         return $this->tpl->draw($name,$returnHTML);
     }
 
     public function __destruct()
     {
-        if ($this->options["footer"]===true) $this->tpl->draw("footer");
+        if ($this->options["footer"]===true){
+            $this->tpl->draw("footer");
+            if (file_exists($_SERVER['DOCUMENT_ROOT']."/views_admin/".$this->page_name."_js.html")){
+                $this->tpl->draw($this->page_name."_js");
+            }
+            $this->tpl->draw("end");
+        }
     }
 }

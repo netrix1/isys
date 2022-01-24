@@ -1,0 +1,25 @@
+<script type="text/javascript">
+    // console.log("aaa")
+    // $.when( $.ready ).then(function() {
+    //     Swal.fire({
+    //         title: 'Error!',
+    //         text: 'Do you want to continue',
+    //         icon: 'error',
+    //         confirmButtonText: 'Cool'
+    //     })
+    // })
+    function deleteUser(id,name) {
+        Swal.fire({
+            title: 'ATENÇÃO!',
+            text: 'Tem certeza que deseja excluir o usuario '+name,
+            icon: 'warning',
+            confirmButtonText: 'Excluir',
+            showCancelButton: true,
+            cancelButtonText: 'Não, Cancelar!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                console.log("Clicou excluir no id "+id)
+            }
+        })
+    }
+</script>
