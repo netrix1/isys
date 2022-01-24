@@ -43,6 +43,7 @@
                                 <td>{$value.des_create_on}</td>
                                 <td>{$value.des_modify_on}</td>
                                 <td>
+                                    {if="$value.id_user!=1"}
                                     <a
                                         href="/admin/users/{$value.id_user}"
                                         class="btn btn-info btn-circle btn-sm"
@@ -58,6 +59,7 @@
                                     >
                                         <i class="fas fa-trash"></i>
                                     </a>
+                                    {/if}
                                 </td>
                             </tr>
                         {/loop}
