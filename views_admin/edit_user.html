@@ -1,0 +1,91 @@
+<!--<main>-->
+
+    <!-- Main page content-->
+    <div class="container-xl px-4 mt-4">
+
+        <div class="row">
+            <div class="col-xl-4">
+                <!-- Profile picture card-->
+                <div class="card mb-4 mb-xl-0">
+                    <div class="card-header">Foto de perfildsasdaasddsdsaads</div>
+                    <div class="card-body text-center">
+                        <!-- Profile picture image-->
+                        <img class="img-account-profile rounded-circle user-img" src="/res/admin/img/user.jpg" alt="">
+                        <!-- Profile picture help block-->
+                        <div class="small font-italic text-muted mb-4">JPG or PNG não meiores que 5 MB</div>
+                        <!-- Profile picture upload button-->
+                        <button class="btn btn-primary" type="button" disabled>Incluir imagem</button>
+                        <div class="alert alert-danger mt-4" role="alert">
+                            Será incluido depois!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8">
+                <!-- Account details card-->
+                <div class="card mb-4">
+                    <div class="card-header">Detalhes da conta</div>
+                    <div class="card-body">
+                        <form action="" method="post">
+                            <!-- Form Group (username)-->
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputUsername">Nome de Usuário <small>(será o nome utilizado para se logar)</small></label>
+                                <input class="form-control" id="inputUsername" type="text" placeholder="nome_de_usuario" value="">
+                            </div>
+                            <!-- Form Row-->
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (first name)-->
+                                <div class="col-md-12">
+                                    <label class="small mb-1" for="inputFirstName">Nome Completo</label>
+                                    <input class="form-control" id="inputFirstName" type="text" placeholder="Nome Completo" value="">
+                                </div>
+                                <!-- Form Group (last name)-->
+                                <!--<div class="col-md-6">
+                                    <label class="small mb-1" for="inputLastName">Last name</label>
+                                    <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="Luna">
+                                </div>-->
+                            </div>
+                            <!-- Form Row        -->
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (organization name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputOrgName">Permisão do Usuário</label>
+<!--                                    <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="Start Bootstrap">-->
+                                    <select class="form-control" id="inputOrgName" >
+                                        <option value="1">Administrador</option>
+                                    </select>
+                                </div>
+                                <!-- Form Group (location)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputLocation">Senha <small>(a senha padrão para novos usuários é 123456)</small></label>
+                                    <input class="form-control" id="inputLocation" disabled="disabled" type="text" placeholder="Senha" value="123456">
+                                </div>
+                            </div>
+                            <!-- Form Group (email address)-->
+                            <!--<div class="mb-3">
+                                <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                                <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
+                            </div>-->
+                            <!-- Form Row-->
+                            <!--<div class="row gx-3 mb-3">
+                                &lt;!&ndash; Form Group (phone number)&ndash;&gt;
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputPhone">Phone number</label>
+                                    <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="555-123-4567">
+                                </div>
+                                &lt;!&ndash; Form Group (birthday)&ndash;&gt;
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputBirthday">Birthday</label>
+                                    <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="06/10/1988">
+                                </div>
+                            </div>-->
+                            <!-- Save changes button-->
+                            <input type="submit" class="btn btn-primary btn-block" value="Enviar" name="send_user">
+<!--                            <button class="btn btn-primary btn-block" type="button">Save changes</button>-->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--</main>-->
