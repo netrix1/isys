@@ -16,7 +16,9 @@ O que espera que haja ao neste projeto:
             - Fale Conosco
         - Caso o Membro se Logue teria:
             - Informações do cadastro do membro
+            - Edição do proprio cadastro do membro
             - Visualização da carteirinha
+            - Visualização de Certificados/Documentação
             - Informação ministerial interna
             - Visão dos gastos mensais da igreja
             - Registro do próprio dízimo
@@ -30,7 +32,8 @@ O que espera que haja ao neste projeto:
                 - Cadastro de Fonte de Gasto (Água, Luz, Aluguel, decoração, Doação, Ação Etc)
                 - Subtração de Fonte de gasto
             - Cadastro, Edição e Inativação de Usuário
-            - Cadastro, Edição e Inativação de Membro
+            - Cadastro, Edição, Aprovação ou Desaprovação de edição e Inativação de Membro
+            - Cadastro, Edição e Inativação de Certificados/Documentação
             - Cadastro, Edição e Inativação de Notícias para a Area do visitante
             - Configurações do sistema
                 - Dados da igreja (Logo, nome, endereço, localização)
