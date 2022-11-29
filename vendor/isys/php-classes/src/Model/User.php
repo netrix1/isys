@@ -74,4 +74,31 @@ class User extends Model{
         $query = "SELECT *,ur.des_role_name FROM tb_users u left join tb_users_role ur ON u.des_user_role = ur.id_user_role ORDER BY u.des_user_name";
         return $sql->select($query);
     }
+
+    public function save(){
+        $sql = new Sql();
+        echo "<pre><br>";
+        print_r($this);
+        echo "<hr></pre>";
+        exit();
+        $sql->query("
+            INSERT INTO `isys`.`tb_users` (
+                `des_user_login`,
+                `des_user_pass`,
+                `des_user_role`,
+                `des_user_name`,
+                `des_create_by`,
+                `des_create_on`,
+                `des_inactived_status`
+            ) VALUES (
+                'WWW',
+                '$2y$10$EakvQaFzQsgEltQizx7kPekOGVBHQaUIz4VHO5gS1Qtx0xOl2V5Ua',
+                '2',
+                'FEUUU',
+                '1',
+                '-  -     :  :',
+                NULL
+            );
+        ");
+    }
 }
