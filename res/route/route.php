@@ -68,7 +68,7 @@ foreach (array_reverse(ISYS_MENU_ITENS) as $m_key => $m_value){
 
             $user_template_data = User::userTemplateData();
 
-            //personalized params ($controller_data)
+            //parametros personalizados ($controller_data)
             if (isset($controller_data)) {
                 if ($user_template_data !== NULL) {
                     $final_data = array_merge($user_template_data, $controller_data);
@@ -84,8 +84,10 @@ foreach (array_reverse(ISYS_MENU_ITENS) as $m_key => $m_value){
                 $final_data
             );
         });
+
+        //se a pagina no banco tiver POST (des_have_post) executar trexos abaixo
         if ($m_value['des_have_post']=='1'){
-            // $app->post rules
+
         }
     }
 }

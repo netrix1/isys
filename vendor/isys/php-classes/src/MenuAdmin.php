@@ -6,11 +6,6 @@ class MenuAdmin {
     public function getMenu(){
         $sql = new Sql();
         $res = $sql->select("SELECT * FROM tb_admin_menus WHERE des_inactived_status=0 ORDER BY des_father_menu, des_order ASC ");
-//        echo "<pre>";
-//        print_r($res);
-//        echo "</pre><hr>";
-//        exit();
-
         return $res;
     }
 

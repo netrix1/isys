@@ -2,5 +2,5 @@
 use isys\Model\User;
 
 $users = User::listAllUsers();
-$controller_data = array("users"=>$users);
 
+$controller_data = array("users"=>$users);
