@@ -77,10 +77,6 @@ class User extends Model{
 
     public function save(){
         $sql = new Sql();
-        echo "<pre><br>";
-        print_r($this);
-        echo "<hr></pre>";
-        exit();
         $sql->query("
             INSERT INTO `isys`.`tb_users` (
                 `des_user_login`,
