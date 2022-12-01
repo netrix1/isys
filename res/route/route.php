@@ -8,11 +8,17 @@ $app = new Slim();
 //$app->config('debug', true);
 $app->config('debug', false);
 
+
+/**
+ * ROTAS ESTÁTICAS PADRÃO DO SISTEMA
+ */
+// INDEX
 $app->get('/', function() {
     $page = new Page();
     $page->setTpl("index");
 });
 
+// ADMIN
 $app->get('/admin', function() {
     User::verifyLogin();
 
@@ -40,8 +46,13 @@ $app->post('/admin/login', function() {
     header("Location: /admin");
     exit();
 });
+/** FIM DAS ROTAS ESTÁTICAS PADRÃO DO SISTEMA */
 
-// add admin itens
+/**
+ * ROTAS DINÂMICAS
+ *
+ * pega o html gerado para função makeMenu() a partir da tabela do banco de dados 'tb_admin_menus'
+ */
 foreach (array_reverse(ISYS_MENU_ITENS) as $m_key => $m_value){
 
     if (in_array($m_value['des_type'],[ISYS_TYPE_MENU_PAGE,ISYS_TYPE_PAGE])){
@@ -80,7 +91,7 @@ foreach (array_reverse(ISYS_MENU_ITENS) as $m_key => $m_value){
             }
 
             $page->setTpl(
-                $m_value['des_file_name'],
+                $m_value['des_file_name']."\\",
                 $final_data
             );
         });
@@ -92,7 +103,9 @@ foreach (array_reverse(ISYS_MENU_ITENS) as $m_key => $m_value){
     }
 }
 
-
+/**
+ * ROTA ERRO 404
+ */
 $app->notFound(function () use ($app) {
 //    $app->render('404.html');
     User::verifyLogin();
@@ -100,6 +113,9 @@ $app->notFound(function () use ($app) {
     $page->setTpl("404",User::userTemplateData());
 });
 
+/**
+ * ROTA ERRO 500
+ */
 $app->error(function (\Exception $e) use ($app) {
     User::verifyLogin();
 

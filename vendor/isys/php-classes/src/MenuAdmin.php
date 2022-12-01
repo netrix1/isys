@@ -9,6 +9,13 @@ class MenuAdmin {
         return $res;
     }
 
+    /**
+     * Cria Menu do admin a partir do array contido na tabela tb_admin_menus respeitando o role do usuário
+     *
+     * @param array $menu
+     * @param string $position
+     * @return string
+     */
     public function makeMenu($menu=array(), $position="0"){
         $html = "";
         if ($position === "0") {
@@ -70,6 +77,8 @@ class MenuAdmin {
         return $html;
     }
 }
+
+/* Exemplo mantido como histórico do layout */
 $example_html = '
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
