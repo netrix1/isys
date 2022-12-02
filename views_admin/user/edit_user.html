@@ -30,14 +30,14 @@
                             <!-- Form Group (username)-->
                             <div class="mb-3">
                                 <label class="small mb-1" for="inputUsername">Nome de Usuário <small>(será o nome utilizado para se logar)</small></label>
-                                <input class="form-control" id="inputUsername" type="text" placeholder="nome_de_usuario" value="">
+                                <input class="form-control" id="inputUsername" type="text" placeholder="nome_de_usuario" value="{$user.des_user_login}">
                             </div>
                             <!-- Form Row-->
                             <div class="row gx-3 mb-3">
                                 <!-- Form Group (first name)-->
                                 <div class="col-md-12">
                                     <label class="small mb-1" for="inputFirstName">Nome Completo</label>
-                                    <input class="form-control" id="inputFirstName" type="text" placeholder="Nome Completo" value="">
+                                    <input class="form-control" id="inputFirstName" type="text" placeholder="Nome Completo" value="{$user.des_user_name}">
                                 </div>
                                 <!-- Form Group (last name)-->
                                 <!--<div class="col-md-6">
@@ -57,8 +57,8 @@
                                 </div>
                                 <!-- Form Group (location)-->
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="inputLocation">Senha <small>(a senha padrão para novos usuários é 123456)</small></label>
-                                    <input class="form-control" id="inputLocation" disabled="disabled" type="text" placeholder="Senha" value="123456">
+                                    <label class="small mb-1" for="inputLocation">Membro Atrelado <small>(Nome - ID membro)</small></label>
+                                    <input class="form-control" id="inputLocation" disabled="disabled" type="text" placeholder="Senha" value="JONISVAL ANDRADE">
                                 </div>
                             </div>
                             <!-- Form Group (email address)-->

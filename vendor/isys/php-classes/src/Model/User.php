@@ -71,7 +71,7 @@ class User extends Model{
 
     public static function listAllUsers(){
         $sql = new Sql();
-        $query = "SELECT *,ur.des_role_name FROM tb_users u left join tb_users_role ur ON u.des_user_role = ur.id_user_role ORDER BY u.des_user_name";
+        $query = "SELECT *,ur.des_role_name FROM tb_users u left join tb_users_role ur ON u.id_user_role = ur.id_user_role ORDER BY u.des_user_name";
         return $sql->select($query);
     }
 
@@ -81,7 +81,8 @@ class User extends Model{
             INSERT INTO `isys`.`tb_users` (
                 `des_user_login`,
                 `des_user_pass`,
-                `des_user_role`,
+                `id_user_role`,
+                `id_member`,
                 `des_user_name`,
                 `des_create_by`,
                 `des_create_on`,
@@ -90,11 +91,26 @@ class User extends Model{
                 'WWW',
                 '$2y$10$EakvQaFzQsgEltQizx7kPekOGVBHQaUIz4VHO5gS1Qtx0xOl2V5Ua',
                 '2',
+                '1',
                 'FEUUU',
                 '1',
                 '-  -     :  :',
                 NULL
             );
         ");
+    }
+
+    public function getUser($user_id)
+    {
+        $sql = new Sql();
+        $query = "
+        SELECT u.id_user, u.des_user_name, u.des_user_login, u.id_user_role, u.des_create_by, u.des_create_on, u.des_modify_by, u.des_modify_on, u.des_inactived_status, u.des_inactived_by, u.des_inactived_on, ur.des_role_name, ur.des_role_nickname, m.id_member, m.des_name, m.des_picture, m.des_gender, m.des_birth_date, m.des_temple
+        FROM
+        tb_users u
+        LEFT JOIN tb_users_role ur ON ur.id_user_role = u.id_user_role
+        LEFT JOIN tb_members m ON m.id_member = u.id_member
+        WHERE u.id_user = {$user_id}
+        ";
+        return $sql->select($query);
     }
 }
