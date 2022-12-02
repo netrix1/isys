@@ -57,9 +57,10 @@ foreach (array_reverse(ISYS_MENU_ITENS) as $m_key => $m_value){
 
     if (in_array($m_value['des_type'],[ISYS_TYPE_MENU_PAGE,ISYS_TYPE_PAGE])){
 
-        $app->get($m_value['des_href'], function() use ($m_value) {
+        //$des_var = $m_value['des_href'];
+        $app->get($m_value['des_href'], function($get_param) use ($m_value) {
 
-            // Check logged user
+            // Verifica se usuario está logado
             User::verifyLogin();
 
             // verifica se arquivo está na pasta
