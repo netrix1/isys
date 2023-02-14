@@ -57,8 +57,23 @@ foreach (array_reverse(ISYS_MENU_ITENS) as $m_key => $m_value){
 
     if (in_array($m_value['des_type'],[ISYS_TYPE_MENU_PAGE,ISYS_TYPE_PAGE])){
 
+        $ex_des_href = explode('/',$m_value['des_href']); // explode url que está no banco
+        $ex_browser = explode('/',$_SERVER['REQUEST_URI']); // explode url que está no navegador
+
+        $get_param = [];
+
+        //cria um array com o indice sendo o parametro variavel get da pagina escalandos-os caso seja mais que um
+        //ex:. [":menu"=>1,":submenu"=>3]
+        foreach ($ex_des_href as $des_href_k => $des_href_v){
+            if (strstr($des_href_v, ':')){
+                $get_param[$des_href_v] = $ex_browser[$des_href_k];
+            }
+        }
+
         //$des_var = $m_value['des_href'];
         $app->get($m_value['des_href'], function($get_param) use ($m_value) {
+
+
 
             // Verifica se usuario está logado
             User::verifyLogin();
